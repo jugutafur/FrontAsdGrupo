@@ -78,7 +78,7 @@ export class PrincipalComponent {
     this.optionsBusqueda = [
         {value: 1, busqueda: 'Tipo'},
         {value: 2, busqueda: 'Fecha de Compra'},
-        {value: 2, busqueda: 'Serial'},
+        {value: 3, busqueda: 'Serial'},
     ]
   }
 
@@ -128,21 +128,23 @@ export class PrincipalComponent {
     console.log(this.active);
   }
 
-
-
-
-
-
-
-
-
-
   searchType(busquedaTipo : number){
-    if(busquedaTipo == 1 || busquedaTipo == 2){
-      alert("vas a consultar por Tipo");
+    if(busquedaTipo == 1 ){
+      alert("vas a consultar Maquinaria");
       this.showTableType = true;
       console.log(this.busquedaTipo);
-    }else{
+    }
+    else if(busquedaTipo == 2){
+      alert("vas a consultar Inmueble");
+      this.showTableType = true;
+      console.log(this.busquedaTipo);
+    }
+    else if(busquedaTipo == 3){
+      alert("vas a consultar Material de oficina");
+      this.showTableType = true;
+      console.log(this.busquedaTipo);
+    }
+    else{
       alert("por favor ingrese un tipo valido");
       this.showTableType = false;
       console.log(this.busquedaTipo);
@@ -150,15 +152,21 @@ export class PrincipalComponent {
 
   }
 
-  searchDate(){
-    this.showTableType = false;
-    alert("vas a consultar por fecha");
-    console.log(this.busquedaFecha);
+  searchDate(busquedaFecha: Date){
+    if(busquedaFecha){
+      alert("vas a consultar la fecha " + busquedaFecha);
+      this.showTableType = true;
+      console.log(this.busquedaTipo);
+    }else{
+      alert("por favor ingrese un tipo valido");
+      this.showTableType = false;
+      console.log(this.busquedaTipo);
+    }
   }
 
-  searchSerie(){
-    this.showTableType = false;
-    alert("vas a consultar por tipo "+ this.busquedaSerial);
+  searchSerie(busquedaSerial: number){
+    this.showTableType = true;
+    alert("vas a consultar por Serial "+ this.busquedaSerial);
     console.log(this.busquedaSerial);
   }
 

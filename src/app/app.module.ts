@@ -20,6 +20,7 @@ import { MaterialModule } from './material/material.module';
     AppComponent,
     PrincipalComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,6 +33,7 @@ import { MaterialModule } from './material/material.module';
     MaterialModule,
     ToastrModule.forRoot()
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
